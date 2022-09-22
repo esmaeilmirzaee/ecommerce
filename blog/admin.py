@@ -10,9 +10,22 @@ class BlogAdmin(admin.AdminSite):
     site_title = 'Manage blogs'
 
 
+class BlogModel(admin.ModelAdmin):
+    # fields = ['title', 'author', 'published_at']
+
+    fieldsets = (
+        ('Section 1',
+         {
+             'fields': ('title', 'content',),
+             'description': 'Some helps'
+         }),
+        ('Section 2',
+         {
+             'fields': ('status',),
+         })
+    )
+
+
 blog_admin = BlogAdmin()
-admin.site.register(models.Blog)
+admin.site.register(models.Blog, BlogModel)
 admin.site.register(models.Category)
-
-
-# admin.site.unregister(django.contrib.sessions.models.Session)
