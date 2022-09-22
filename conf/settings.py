@@ -31,8 +31,7 @@ ALLOWED_HOSTS = ['192.168.56.3']
 # Application definition
 
 BUILTIN_APPS = [
-    # 'django.contrib.admin',
-    'blog.apps.BlogAdminConfig',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

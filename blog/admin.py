@@ -11,4 +11,8 @@ class BlogAdmin(admin.AdminSite):
 
 
 blog_admin = BlogAdmin()
-blog_admin.register(models.Post)
+admin.site.register(models.Blog)
+admin.site.register(models.Category)
+
+
+# admin.site.unregister(django.contrib.sessions.models.Session)
