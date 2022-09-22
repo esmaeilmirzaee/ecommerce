@@ -4,6 +4,7 @@ from blog.admin import blog_admin
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('blogadmin/', blog_admin.urls),
 ]
 
