@@ -1,3 +1,10 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+
+class BlogAdmin(admin.AdminSite):
+    site_title = 'Manage blogs'
+
+
+blog_admin = BlogAdmin()
+blog_admin.register(models.Post)
