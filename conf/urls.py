@@ -2,10 +2,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from blog.admin import blog_admin
+from bookstore.admin import bookstore_admin
 
 urlpatterns = [
-    path('admin/', blog_admin.urls),
+    path('admin/', admin.site.urls),
+    path('bookstore/', bookstore_admin.urls),
     path('editor', include('django_summernote.urls')),
 ]
 
