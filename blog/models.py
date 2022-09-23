@@ -18,7 +18,7 @@ class Blog(models.Model):
 
     class NewManager(models.Manager):
         def get_queryset(self):
-            return super().get_queryset().filter(status=Post.STATUS_PUBLISHED_OPTION)
+            return super().get_queryset().filter(status=Blog.STATUS_PUBLISHED_OPTION)
 
     title = models.CharField(max_length=80)
     content = models.TextField()

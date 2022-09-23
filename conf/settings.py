@@ -40,7 +40,7 @@ BUILTIN_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-
+    'django_summernote',
 ]
 
 PROJECT_APPS = [
@@ -130,11 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = 'static'
 
-if DEBUG:
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    MEDIA_URL = '/media/'
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static')
-    ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Can't display, summer note
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
