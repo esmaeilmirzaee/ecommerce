@@ -26,10 +26,21 @@ class EmailFilter(admin.SimpleListFilter):
 
 
 class Filter(admin.ModelAdmin):
-    
+
     list_filter = ('is_active', 'role', 'created_at', EmailFilter, 'user__email')
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        print(obj)
+        # 33 is id of a user, and field inside Profile
+        return obj is None or obj.pk != 33
+
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 
 bookstore_admin = BookstoreAdmin(name='Bookstore admin')
-# bookstore_admin.register(Book)
+bookstore_admin.register(Book)
 bookstore_admin.register(Profile, Filter)
